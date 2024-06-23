@@ -1,0 +1,61 @@
+.hero-section{
+    background: url("/images/wallpaper-crochet-hero-section.jpg");
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: black;
+    height: 500px;
+}
+
+.hero-section h1{
+    color: white;
+    font-size: 58px;
+    text-transform: uppercase;
+}
+
+.hero-section p{
+    color: white;
+    font-size: 26px;
+    line-height: 35px;
+    width: 100%;
+}
+
+.pink-colored-text{
+    color: var(--lighter-pink);
+}
+
+.hero-section .container{
+    height: 500px;
+}
+
+.hero-section .column{
+    width: 500px;
+    height: 400px;
+    justify-content: space-around;
+}
+
+.hero-section .row button{
+    margin-right: 30px;
+    width: 170px;
+}
+
+@media (max-width: 375px) {
+    .hero-section h1{
+        font-size: 48px;
+    }
+
+    .hero-section p {
+        font-size: 22px;
+    }
+
+    .smaller-text-on-small-screen{
+        font-size: 38px;
+    }
+
+    .hero-section .button-row{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero-section .button-row button{
+        width: 150px;
+    }
+}

@@ -1,0 +1,181 @@
+.navbar{
+    width: 100vw;
+    height: 64px;
+
+    display: flex;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    height: 64px;
+}
+
+.menu-item{
+    font-size: 20px;
+    margin-right: 60px;
+}
+
+.menu-icon{
+    background-color: var(--lighter-pink);
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
+
+.menu-icon-line{
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+
+    background-color: white;
+}
+
+.logo-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 370px;
+}
+
+.logo-small{
+    width: 58px;
+    height: 58px;
+
+    border-radius: 100%;
+}
+
+.logo-title{
+    width: 100%;
+    text-align: center;
+    color: var(--lighter-pink);
+}
+
+.menu-mobile{
+    width: 50vw;
+    height: 100vh;
+    right: 0vw;
+    position: fixed;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: var(--lighter-pink);
+}
+
+.menu-mobile .menu-item{
+    color: white;
+    height: 30px;
+    width: 100%;
+    padding: 20px;
+}
+
+.menu-mobile .menu-item:hover{
+    background-color: var(--dark-pink);
+}
+
+/* Para celulares grandes e tablets pequenos */
+@media (max-width: 768px) {
+    .menu-icon {
+        width: 60px;
+        height: 50px;
+    }
+
+    .menu-icon-line {
+        width: 30px;
+        height: 4px;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+
+    .navbar {
+        height: 50px;
+    }
+
+    .logo-box {
+        width: 300px;
+        justify-content: space-between;
+    }
+
+    .logo-title {
+        font-size: 20px;
+        text-align: end;
+    }
+
+    .logo-small {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+/* Para celulares médios (ajuste existente) */
+@media (max-width: 375px) {
+    .menu-icon {
+        width: 50px;
+        height: 40px;
+    }
+
+    .menu-icon-line {
+        width: 25px;
+        height: 3px;
+        margin-bottom: 4px;
+        background-color: white;
+    }
+
+    .navbar {
+        height: 40px;
+    }
+
+    .logo-box {
+        width: 80%;
+        justify-content: space-between;
+    }
+
+    .logo-title {
+        font-size: 18px;
+        text-align: end;
+    }
+
+    .logo-small {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 320px) {
+    .menu-icon {
+        width: 40px;
+        height: 35px;
+    }
+
+    .menu-icon-line {
+        width: 20px;
+        height: 2.5px;
+        margin-bottom: 3px;
+        background-color: white;
+    }
+
+    .navbar {
+        height: 35px;
+    }
+
+    .logo-box {
+        width: 75%;
+        justify-content: space-between;
+    }
+
+    .logo-title {
+        font-size: 16px;
+        text-align: end;
+    }
+
+    .logo-small {
+        width: 34px;
+        height: 34px;
+    }
+}

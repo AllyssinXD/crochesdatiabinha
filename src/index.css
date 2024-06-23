@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "InriaSans";
+  src: url("/fonts/InriaSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "InriaSans";
+  src: url("/fonts/InriaSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+:root {
+  font-family: 'InriaSans';
+  line-height: 1;
+
+  color-scheme: light;
+  color: rgb(0, 0, 0);
+
+  --lighter-pink: #EB376D;
+  --dark-pink: #CC3864;
+  --dark-yellow: #D3BE00;
+  --lighter-yellow: #CC6438;
+
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.row-center-verticaly{
+  align-items: center;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.primary-button{
+  font-family: 'InriaSans';
+  min-width: 100px;
+  height: 40px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  background: linear-gradient(to right, var(--dark-yellow), var(--lighter-yellow));
+}
+
+.secondary-button{
+  padding: 5px;
+  font-family: 'InriaSans';
+  min-width: 100px;
+  height: 40px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--lighter-pink), var(--dark-pink));
+}
+
+@media (max-width: 768px){
+  .container{
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 375px){
+  .container{
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 320px){
+  .container{
+    padding-left: 20px;
+  }
+}
