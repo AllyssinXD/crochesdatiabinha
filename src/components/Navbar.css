@@ -1,5 +1,4 @@
 .navbar{
-    width: 100vw;
     height: 64px;
 
     display: flex;
@@ -9,7 +8,6 @@
     display: flex;
     list-style: none;
     align-items: center;
-    height: 64px;
 }
 
 .menu-item{
@@ -79,13 +77,38 @@
     background-color: var(--dark-pink);
 }
 
-/* Para celulares grandes e tablets pequenos */
-@media (max-width: 768px) {
+@media (min-width: 1025px) and (max-width: 1280px) {
+    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /*Afinar Barra de Navegação*/
+    
+
+    /*Afinar Componente Pai da Navegação (Irá afinar os filhos tmb)*/
+    .navbar {
+        height: 50px;
+    }
+
+    /*Diminuir Margin do Menu de Links*/
+    .menu-item{
+        margin-right: 30px;
+    }
+
+    /*Ultimo item ficar colado com a borda*/
+    .menu-item:last-child{
+        margin-right: 0px;
+    }
+
+
+    /*Fazer Botão do Menu Lateral Menor*/
     .menu-icon {
         width: 60px;
         height: 50px;
     }
 
+    /*Fazer Linhas do Botão do Menu Lateral Menor*/
     .menu-icon-line {
         width: 30px;
         height: 4px;
@@ -93,10 +116,7 @@
         background-color: white;
     }
 
-    .navbar {
-        height: 50px;
-    }
-
+    /*Parte do Branding (Titulo e Logo) Terem um tamanho interessante*/
     .logo-box {
         width: 300px;
         justify-content: space-between;
@@ -113,8 +133,13 @@
     }
 }
 
+/* Tablets Deitados*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+
+}
+
 /* Para celulares médios (ajuste existente) */
-@media (max-width: 375px) {
+@media (min-width: 481px) and (max-width: 767px) {
     .menu-icon {
         width: 50px;
         height: 40px;
@@ -132,7 +157,7 @@
     }
 
     .logo-box {
-        width: 80%;
+        width: 300px;
         justify-content: space-between;
     }
 
@@ -147,10 +172,10 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 480px) {
     .menu-icon {
-        width: 40px;
-        height: 35px;
+        width: 45px;
+        height: 40px;
     }
 
     .menu-icon-line {
@@ -161,7 +186,7 @@
     }
 
     .navbar {
-        height: 35px;
+        height: 40px;
     }
 
     .logo-box {
@@ -170,7 +195,7 @@
     }
 
     .logo-title {
-        font-size: 16px;
+        font-size: 12px;
         text-align: end;
     }
 

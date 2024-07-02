@@ -8,7 +8,7 @@ function Navbar() {
 
   const updateMobile = () => {
     console.log(window.innerWidth);
-    window.innerWidth > 1200 ? setIsMobile(false) : setIsMobile(true);
+    window.innerWidth > 1024 ? setIsMobile(false) : setIsMobile(true);
   };
 
   const handleMenuToggle = () => {

@@ -1,4 +1,5 @@
 import HeroSection from "./HeroSection";
+import JobsSection from "./JobsSection";
 import "./LandingPage.css";
 import Navbar from "./Navbar";
 
@@ -7,6 +8,7 @@ function LandingPage() {
     <>
       <Navbar />
       <HeroSection />
+      <JobsSection />
     </>
   );
 }

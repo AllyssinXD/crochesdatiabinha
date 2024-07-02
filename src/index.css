@@ -2,7 +2,7 @@
   font-family: "InriaSans";
   src: url("/fonts/InriaSans-Regular.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
 }
 
 @font-face {
@@ -10,6 +10,13 @@
   src: url("/fonts/InriaSans-Bold.ttf") format("truetype");
   font-style: normal;
   font-weight: bold;
+}
+
+@font-face {
+  font-family: "InriaSans";
+  src: url("/fonts/InriaSans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: light;
 }
 
 :root {
@@ -38,9 +45,13 @@
 }
 
 .container{
-  width: 100%;
+  width: calc(100vw - 40px);
+
   max-width: 1200px;
   margin: 0 auto;
+
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .flex-row{
@@ -66,10 +77,12 @@
   min-width: 100px;
   height: 40px;
   border: none;
+  border-radius: 5px;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   padding: 5px;
   background: linear-gradient(to right, var(--dark-yellow), var(--lighter-yellow));
+  transition: 0.2s;
 }
 
 .secondary-button{
@@ -78,25 +91,17 @@
   min-width: 100px;
   height: 40px;
   border: none;
+  border-radius: 5px;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   background: linear-gradient(to right, var(--lighter-pink), var(--dark-pink));
+  transition: 0.2s;
 }
 
-@media (max-width: 768px){
-  .container{
-    padding-left: 20px;
-  }
+.secondary-button:hover{
+transform: scale(1.1);
 }
 
-@media (max-width: 375px){
-  .container{
-    padding-left: 20px;
-  }
-}
-
-@media (max-width: 320px){
-  .container{
-    padding-left: 20px;
-  }
+.primary-button:hover{
+  transform: scale(1.1);
 }
