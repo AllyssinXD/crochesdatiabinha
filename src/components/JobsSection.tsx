@@ -77,7 +77,7 @@ function JobsSection() {
               <h1>O que nossos clientes dizem</h1>
               <div className="feedbacks">
                 <div className="feedback-card">
-                  <img className="profile" src="/" />
+                  <img className="profile" src="/images/testimonial-1.png" />
                   <span className="username">@mynabarbosa_</span>
                   <p className="comment">
                     “Lindo, lindo e muito lindo ❤️ obrigada pela sua dedicação
@@ -85,19 +85,17 @@ function JobsSection() {
                   </p>
                 </div>
                 <div className="feedback-card">
-                  <img className="profile" src="/" />
-                  <span className="username">@mynabarbosa_</span>
+                  <img className="profile" src="/images/testimonial-2.png" />
+                  <span className="username">@feltrospaloma</span>
                   <p className="comment">
-                    “Lindo, lindo e muito lindo ❤️ obrigada pela sua dedicação
-                    ❤️😍”
+                    “Uauuuuu 👏👏👏👏👏que espetáculo de trabalho 😍😍😍😍😍”
                   </p>
                 </div>
                 <div className="feedback-card">
-                  <img className="profile" src="/" />
-                  <span className="username">@mynabarbosa_</span>
+                  <img className="profile" src="/images/testimonial-3.png" />
+                  <span className="username">@ester_mendds</span>
                   <p className="comment">
-                    “Lindo, lindo e muito lindo ❤️ obrigada pela sua dedicação
-                    ❤️😍”
+                    “Feito entregue amado ❤️ Super amei 😍”
                   </p>
                 </div>
               </div>

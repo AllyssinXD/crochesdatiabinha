@@ -10,7 +10,7 @@ function HeroSection() {
               <span className="smaller-text-on-small-screen">
                 Transformando
               </span>{" "}
-              Fios Em <span className="pink-colored-text">Arte</span>
+              Fios Em <span className="yellow-colored-text">Arte</span>
             </h1>
             <p>
               Peças Exclusivas e Feitas à Mão com Amor: Amigurumis, Roupas,
@@ -18,7 +18,6 @@ function HeroSection() {
             </p>
             <div className="button-row">
               <button className="primary-button">Fazer Encomenda</button>
-              <button className="secondary-button">Acesse nosso Blog</button>
             </div>
           </div>
           <div className="column"></div>

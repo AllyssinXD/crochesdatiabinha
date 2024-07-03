@@ -1,27 +1,28 @@
 .hero-section{
-    background: url("/images/wallpaper-crochet-hero-section.jpg");
-    background-size: cover;
-    background-blend-mode: soft-light;
-    background-color: black;
+    background: url("/images/hero-landscape-background.png");
+    background-size: 1200px;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: center;
     padding: 100px 0px;
 }
 
 .hero-section h1{
-    color: white;
+    color: black;
     font-size: 58px;
     text-transform: uppercase;
 }
 
 .hero-section p{
-    color: white;
-    font-size: 26px;
+    color: black;
+    font-size: 20px;
     font-weight: light;
     line-height: 35px;
     width: 100%;
 }
 
-.pink-colored-text{
-    color: var(--lighter-pink);
+.yellow-colored-text{
+    color: var(--dark-yellow);
 }
 
 .hero-section .container{
@@ -36,8 +37,9 @@
 }
 
 .hero-section .button-row button{
-    margin-right: 30px;
-    width: 170px;
+    width: 210px;
+    height: 45px;
+    font-size: 18px;
 }
 
 /* 
@@ -45,83 +47,49 @@
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
-  
-    
-    
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    .hero-section{
-        height: 500px;
-        padding: 100px 0px;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    /* CSS */
-    
-  }
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
 @media (min-width: 481px) and (max-width: 767px) {
     .hero-section{
         height: 650px;
         padding: 50px 0px;
+
+        background: url("/images/hero-mobile-background.png");
+        background-position: bottom;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
     }
 
     .smaller-text-on-small-screen{
         display: block;
-        font-size: 48px;
+        font-size: 45px; /* Reduzido para melhor legibilidade */
         width: 100%;
     }
 
+    .yellow-colored-text{
+        color: var(--dark-pink);
+    }
+
     .hero-section h1{
-        font-size: 65px;
+        font-size: 60px;
+        color: black;
     }
 
     .hero-section p {
-        font-size: 26px;
+        font-size: 22px; /* Reduzido para melhor legibilidade */
         font-weight: light;
-        line-height: 40px;
+        line-height: 36px;
+        color: black;
     }
 
     .hero-section .button-row{
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .hero-section .button-row button{
         width: 220px;
         height: 56px;
         font-size: 18px;
-        margin-right: 50px;
     }
 
     .hero-section .container .column:last-child{
@@ -132,50 +100,54 @@
     }
 
     .hero-section .column{
-        height: 490px;
+        height: 450px;
         width: 400px;
     }
 }
-
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
 
 @media (min-width: 320px) and (max-width: 480px) {
     .hero-section{
         height: 600px;
         padding: 50px 0px;
+
+        background: url("/images/R-mobile.png");
+        background-position: bottom;
+        background-attachment: scroll;
+        background-repeat: no-repeat;
     }
     
-    /*Titulos*/
     .smaller-text-on-small-screen{
         display: block;
-        font-size: 36px;
+        font-size: 36px; /* Ajustado para melhor legibilidade */
         width: 100%;
     }
 
     .hero-section h1{
         font-size: 48px;
+        color: black;
+    }
+
+    .yellow-colored-text{
+        color: var(--dark-pink);
     }
 
     .hero-section p{ 
         width: 300px;
-        font-size: 22px;
+        font-size: 1.165rem; /* Ajustado para melhor legibilidade */
         font-weight: light;
-        line-height: 36px;
+        line-height: 30px;
+        color: black;
     }
 
     .hero-section .button-row{
         display: flex;
+        justify-content: center;
     }
 
     .hero-section .button-row button{
-        min-width: 140px;
-        width: 140px;
-        height: 40px;
-        font-size: 12px;
+        width: 180px;
+        height: 46px;
+        font-size: 16px;
     }
 
     .hero-section .container{
@@ -187,7 +159,7 @@
     }
 
     .hero-section .column{
-        height: 420px;
-        width: 300px;
+        height: 360px;
+        width: 310px;
     }
 }
