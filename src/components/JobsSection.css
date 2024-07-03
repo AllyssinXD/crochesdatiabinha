@@ -170,8 +170,83 @@
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* Add specific styles if needed */
+@media (min-width: 768px) and (max-width: 1100px) {
+    
+    .jobs-products {
+        width: 100%;
+    }
+
+    .jobs-products h1 {
+        font-size: 3.375rem; /* 54px */
+    }
+
+    .jobs-products p {
+        font-size: 1.165rem; /* 32px */
+        line-height: 30px; /* 40px */
+    }
+
+    .jobs-section .container {
+        display: block;
+    }
+
+    .jobs-images {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .jobs-images button {
+        min-width: 210px;
+        height: 50px;
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .jobs-images .button-row {
+        margin: 0 auto;
+        justify-content: space-between;
+        width: 461px;
+    }
+    
+    .jobs-feedbacks {
+        width: 100%;
+    }
+
+    .jobs-feedbacks h1 {
+        width: 100%;
+        font-size: 2.75rem; /* 44px */
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .feedback-card {
+        height: 200px;
+        width: 200px;
+        margin-bottom: 40px;
+    }
+    
+    .feedback-card .username {
+        font-size: 1rem;
+    }
+    
+    .feedback-card .profile {
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+    }
+
+    .feedback-card .comment {
+        font-size: 1.165rem; /* 14px */
+    }
+
+    .image-grid {
+        display: grid;
+    }
+
+    .grid-container {
+        justify-self: center;
+        grid-template-columns: repeat(4, calc((100vw - 75px) / 4));
+        grid-auto-rows: 140px;
+    }
+
 }
   
 /* 

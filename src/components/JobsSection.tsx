@@ -5,7 +5,7 @@ function JobsSection() {
 
   const updateMobile = () => {
     console.log(window.innerWidth);
-    window.innerWidth > 1280 ? setIsMobile(false) : setIsMobile(true);
+    window.innerWidth > 1100 ? setIsMobile(false) : setIsMobile(true);
   };
 
   useEffect(() => {

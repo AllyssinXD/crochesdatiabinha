@@ -1,3 +1,6 @@
+import BlogSection from "./BlogSection";
+import ContactSection from "./ContactSection";
+import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import JobsSection from "./JobsSection";
 import "./LandingPage.css";
@@ -9,6 +12,9 @@ function LandingPage() {
       <Navbar />
       <HeroSection />
       <JobsSection />
+      <ContactSection />
+      <BlogSection />
+      <Footer />
     </>
   );
 }

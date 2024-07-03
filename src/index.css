@@ -30,7 +30,9 @@
   --dark-pink: #CC3864;
   --dark-yellow: #D3BE00;
   --lighter-yellow: #CC6438;
-
+  --general-card-size: 500px;
+  --selection-button-space: 20px;
+  --general-card-width: 400px;
 
 
   font-synthesis: none;
@@ -104,4 +106,12 @@ transform: scale(1.1);
 
 .primary-button:hover{
   transform: scale(1.1);
+}
+
+@media (max-width: 386px) {
+  :root{
+    --general-card-size: 450px;
+    --general-card-width: 300px;
+    --selection-button-space: 20px;
+  }
 }
