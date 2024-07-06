@@ -1,0 +1,575 @@
+@font-face {
+    font-family: "Abel";
+    src: url("/fonts/Abel-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+.dynamous-section .container{
+    background-color: #F8FBFF;
+    height: 600px;
+    border-radius: 30px;
+    margin: 50px auto;
+    align-items: center;
+}
+
+.dynamous-button{
+    font-family: 'Abel';
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 2px solid #12213F;
+    color: #12213F;
+    transition: 0.2s;
+}
+
+.dynamous-button:hover{
+    transform: scale(1);
+    background-color: #12213F;
+    color: white;
+}
+
+.dynamous-section .text-column{
+    padding: 40px;
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dynamous-section .text-column h1{
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-family: 'Montserrat';
+    color: #12213F;
+}
+
+.dynamous-section .text-column .bold{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.dynamous-section .text-column p{
+    font-family: 'Abel';
+    font-size: 1.165rem;
+    line-height: 2.4rem;
+}
+
+.dynamous-section .graphics-column{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.dynamous-section .rotating-details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ilustrations {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.ilustrations img{
+    position: absolute;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.ilustrations .background{
+    width: 350px;
+    height: 350px;
+
+    z-index: 10;
+}
+
+.ilustrations .top-layer{
+    width: 380px;
+    height: 370px;
+    z-index: 13;
+}
+
+.popup{
+    position: absolute;
+    z-index: 12;
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 10px;
+    color: #12213F;
+}
+
+.popup.one{
+    top: 24%;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup.two{
+    top: 18%;
+    right: 30%;
+
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.popup.two .top{
+    font-size: 12px;
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+}
+.popup.two .right{
+    grid-column: 1;
+}
+.popup.two .left{
+    grid-column: 0;
+}
+
+.popup.three{
+    height: 100px;
+    width: 100px;
+
+    bottom: 20%;
+    right: 20%;
+
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.popup.three img{
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.progress{
+    --progress: 40%;
+    --color: #B5BDCA;
+    --vel : 2s;
+
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(var(--color) var(--progress, 0), transparent 0%);
+    border-radius: 50%;
+    animation: rotate var(--vel) linear 0s infinite;
+    transition: 1s;
+}
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes rotateBackwards {
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+.progress.medium::after{
+    content: '';
+    position: absolute;
+    inset: 6px;
+    background-color: #F8FBFF;
+    border-radius: 50%;
+}
+
+.progress.big::after{
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background-color: #F8FBFF;
+    border-radius: 50%;
+}
+
+.progress.enormous::after{
+    content: '';
+    position: absolute;
+    inset: 7px;
+    background-color: #F8FBFF;
+    border-radius: 50%;
+}
+
+.progress.small::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background-color: #F8FBFF;
+    border-radius: 50%;
+}
+
+.progress.small{
+    width: 350px;
+    height: 350px;
+    z-index: 3;
+}
+
+.progress.medium{
+    width: 370px;
+    height: 370px;
+    z-index: 2;
+    animation: rotateBackwards var(--vel) linear 0s infinite;
+}
+
+
+.bold{
+    font-weight: bold;
+}
+
+.progress.big{
+    width: 390px;
+    height: 390px;
+    z-index: 1;
+}
+
+.progress.enormous{
+    width: 420px;
+    height: 420px;
+    z-index: 0;
+    animation: rotateBackwards var(--vel) linear 0s infinite;
+}
+
+.floating{
+    animation: float 10s ease-in-out 0s infinite;
+}
+
+.floatingtwo{
+    animation: floattwo 10s ease-in-out 0s infinite;
+}
+
+.floatingthree{
+    animation: floatthree 10s ease-in-out 0s infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translate(-20px, -20px); /* Move to the right edge */
+    }
+    100% {
+        transform: translate(0px, 0px); /* Move back to the starting position */
+    }
+}
+
+@keyframes floatthree {
+    50% {
+        transform: translate(20px, 20px); /* Move to the right edge */
+    }
+    100% {
+        transform: translate(0px, 0px);  /* Move back to the starting position */
+    }
+}
+
+@keyframes floattwo {
+    50% {
+        transform: translate(20px, -20px); /* Move to the right edge */
+    }
+    100% {
+        transform: translate(0px, 0px);  /* Move back to the starting position */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .ilustrations .background{
+        width: 55%;
+        height: 40%;
+    }
+    .ilustrations .top-layer{
+        width: 60%;
+        height: 40%;
+    }
+    .progress.enormous {
+        width: 70%;
+        height: 50%;
+    }
+
+    .progress.big {
+        width: 66%;
+        height: 45%;
+    }
+
+    .progress.medium {
+        width: 60%;
+        height: 42%;
+    }
+
+    .progress.small {
+        width: 58%;
+        height: 38%;
+    }
+
+    .text-column button{
+        width: 150px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px){
+
+    .dynamous-section .container{
+        padding: 50px 20px;
+        display: block;
+        height: unset;
+    }
+
+    .dynamous-section .graphics-column{
+        height: 450px;
+        width: 450px;
+        margin: 0 auto;
+    }
+
+    .ilustrations .background{
+        width: 250px;
+        height: 250px;
+    }
+    .ilustrations .top-layer{
+        width: 260px;
+        height: 250px;
+    }
+
+    .ilustrations .background{
+        width: 300px;
+        height: 300px;
+    }
+    .ilustrations .top-layer{
+        width: 320px;
+        height: 310px;
+    }
+
+
+    .dynamous-section .text-column {
+        padding: 20px;
+        width: unset;
+        height: unset;
+    }
+
+    .dynamous-section .text-column h1{
+        font-size: 2.4rem;
+        margin-bottom: 40px;
+    }
+
+    .dynamous-section .text-column p{
+        font-size: 1.4rem;
+        line-height: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .popup.one{
+        display: none;
+    }
+
+    .popup.two{
+        display: none;
+    }
+
+    .popup.three{
+        display: none;
+    }
+    .text-column button{
+        width: 150px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 387px) and (max-width: 480px){
+    .dynamous-section .container{
+        padding: 50px 20px;
+        display: block;
+        height: unset;
+    }
+
+    .dynamous-section .graphics-column{
+        height: 360px;
+        width: 360px;
+        margin: 0 auto;
+    }
+
+    .ilustrations .background{
+        width: 200px;
+        height: 200px;
+    }
+    .ilustrations .top-layer{
+        width: 220px;
+        height: 210px;
+    }
+
+    .progress.enormous {
+        width: 300px;
+        height: 300px;
+    }
+
+    .progress.big {
+        width: 270px;
+        height: 270px;
+    }
+
+    .progress.medium {
+        width: 250px;
+        height: 250px;
+    }
+
+    .progress.small {
+        width: 230px;
+        height: 230px;
+    }
+
+    .dynamous-section .text-column {
+        padding: 20px;
+        width: unset;
+        height: unset;
+    }
+
+    .dynamous-section .text-column h1{
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .dynamous-section .text-column p{
+        font-size: 1.165rem;
+        line-height: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .popup.one{
+        display: none;
+    }
+
+    .popup.two{
+        display: none;
+    }
+
+    .popup.three{
+        display: none;
+    }
+    .text-column button{
+        width: 150px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 386px){
+    .dynamous-section .container{
+        padding: 50px 20px;
+        display: block;
+        height: unset;
+    }
+
+    .dynamous-section .graphics-column{
+        height: 300px;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .ilustrations .background{
+        width: 200px;
+        height: 200px;
+    }
+    .ilustrations .top-layer{
+        width: 220px;
+        height: 210px;
+    }
+
+    .progress.enormous {
+        width: 250px;
+        height: 250px;
+    }
+
+    .progress.big {
+        width: 246px;
+        height: 246px;
+    }
+
+    .progress.medium {
+        width: 230px;
+        height: 230px;
+    }
+
+    .progress.small {
+        width: 220px;
+        height: 220px;
+    }
+
+    .dynamous-section .text-column {
+        padding: 20px;
+        width: unset;
+        height: unset;
+    }
+
+    .dynamous-section .text-column h1{
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .dynamous-section .text-column p{
+        font-size: 1.165rem;
+        line-height: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .popup.one{
+        display: none;
+    }
+
+    .popup.two{
+        display: none;
+    }
+
+    .popup.three{
+        display: none;
+    }
+
+    .text-column button{
+        width: 150px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}

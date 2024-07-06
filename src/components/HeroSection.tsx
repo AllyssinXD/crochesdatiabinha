@@ -1,6 +1,17 @@
+import React, { RefObject } from "react";
 import "./HeroSection.css";
 
-function HeroSection() {
+interface HeroSectionProps {
+  contactSectionRef: RefObject<HTMLElement>;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ contactSectionRef }) => {
+  const scrollToContact = () => {
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section className="hero-section">
@@ -17,7 +28,9 @@ function HeroSection() {
               Acessórios e Muito Mais.
             </p>
             <div className="button-row">
-              <button className="primary-button">Fazer Encomenda</button>
+              <button onClick={scrollToContact} className="primary-button">
+                Fazer Encomenda
+              </button>
             </div>
           </div>
           <div className="column"></div>
@@ -25,6 +38,6 @@ function HeroSection() {
       </section>
     </>
   );
-}
+};
 
 export default HeroSection;

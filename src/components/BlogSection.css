@@ -144,6 +144,17 @@
     .blog-section .main-column{
         margin-bottom: 40px;
     }
+
+    .blog-section .section-paragraph{
+        width: 100%;
+        font-size: 1.165rem; 
+        line-height: 2rem;
+    }
+
+    .blog-section .cards-column{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 386px){

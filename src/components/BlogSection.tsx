@@ -1,5 +1,6 @@
 import { MouseEvent, useEffect, useRef, useState } from "react";
 import "./BlogSection.css";
+import { useNavigate } from "react-router-dom";
 
 function BlogSection() {
   const [selectedCard, setSelectedCard] = useState(0);
@@ -44,6 +45,12 @@ function BlogSection() {
     }
   };
 
+  const navigate = useNavigate();
+
+  const redirectToBlog = () => {
+    navigate("/blog");
+  };
+
   useEffect(() => {
     showRespectiveCard();
     setSelectedCardButton();
@@ -62,7 +69,9 @@ function BlogSection() {
             Entre no nosso blog e tenha acesso a Graficos de Crochê, Tutoriais e
             Muito Mais
           </p>
-          <button className="secondary-button">Veja Mais</button>
+          <button onClick={redirectToBlog} className="secondary-button">
+            Veja Mais
+          </button>
         </div>
         <div className="column cards-column">
           <div className="blog-cards">
@@ -83,11 +92,11 @@ function BlogSection() {
                   <div className="feedback-column">
                     <div className="likes">
                       <img src="/images/like-icon.png" alt="" />
-                      <span>1000</span>
+                      <span>--</span>
                     </div>
                     <div className="comments">
                       <img src="/images/comment-icon.png" alt="" />
-                      <span>100</span>
+                      <span>--</span>
                     </div>
                   </div>
                 </div>
@@ -95,24 +104,25 @@ function BlogSection() {
               <div className="card">
                 <img
                   className="post-banner"
-                  src="/images/BlogPostExemple.png"
+                  src="/images/BlogPostExemple2.png"
                   alt=""
                 />
                 <div className="info flex-row space-between">
                   <div className="text-column">
-                    <h1>Quanto cobrar em meu trabalho?</h1>
+                    <h1>Ideias Encantadoras para Surpreender com Artesanato</h1>
                     <p>
-                      Saiba quanto cobrar no seu trabalho sem perder dinheiro
+                      Sugestões de presentes feitos à mão que são perfeitos para
+                      qualquer ocasião.
                     </p>
                   </div>
                   <div className="feedback-column">
                     <div className="likes">
                       <img src="/images/like-icon.png" alt="" />
-                      <span>1000</span>
+                      <span>--</span>
                     </div>
                     <div className="comments">
                       <img src="/images/comment-icon.png" alt="" />
-                      <span>100</span>
+                      <span>--</span>
                     </div>
                   </div>
                 </div>
@@ -120,24 +130,25 @@ function BlogSection() {
               <div className="card">
                 <img
                   className="post-banner"
-                  src="/images/BlogPostExemple.png"
+                  src="/images/BlogPostExemple3.jpg"
                   alt=""
                 />
                 <div className="info flex-row space-between">
                   <div className="text-column">
-                    <h1>Quanto cobrar em meu trabalho?</h1>
+                    <h1>Crie Peças Únicas com Padrões Exclusivos de Crochê</h1>
                     <p>
-                      Saiba quanto cobrar no seu trabalho sem perder dinheiro
+                      Explore padrões originais e aprenda como personalizar suas
+                      criações de crochê para se destacar.
                     </p>
                   </div>
                   <div className="feedback-column">
                     <div className="likes">
                       <img src="/images/like-icon.png" alt="" />
-                      <span>1000</span>
+                      <span>--</span>
                     </div>
                     <div className="comments">
                       <img src="/images/comment-icon.png" alt="" />
-                      <span>100</span>
+                      <span>--</span>
                     </div>
                   </div>
                 </div>

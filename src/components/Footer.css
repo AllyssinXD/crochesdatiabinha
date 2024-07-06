@@ -22,10 +22,11 @@ footer .contact-info h2{
 footer .social-media-info{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: start;
 }
 
 footer .contact-info img{
+    margin-right: 40px;
     width: 40px;
     height: 40px;
 }
@@ -73,6 +74,13 @@ footer .contact-info li{
     color: var(--dark-pink);
 }
 
+@media (min-width: 768px) and (max-width: 1024px){
+    footer .container{
+        width: 100%;
+    }
+    
+}
+
 @media (min-width: 387px) and (max-width: 767px){
     footer{
         height: 400px;
@@ -109,7 +117,7 @@ footer .contact-info li{
 
     footer .contact-info{
         height: 170px;
-        width: 200px;
+        width: 150px;
     }
 }
 

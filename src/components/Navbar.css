@@ -1,7 +1,11 @@
 .navbar{
     height: 64px;
-
+    width: 100vw;
     display: flex;
+    position: fixed;
+    z-index: 15;
+
+    background-color: white;
 }
 
 .menu{
@@ -13,6 +17,13 @@
 .menu-item{
     font-size: 20px;
     margin-right: 60px;
+    transition: 0.5s;
+}
+
+.menu-item:hover{
+    color: var(--dark-pink);
+    cursor: pointer;
+    transform: scale(1.1)
 }
 
 .menu-icon{
@@ -150,6 +161,18 @@
         height: 40px;
     }
 
+    .menu-item{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+        padding-left: 20px;
+    }
+
+    .menu-item:hover{
+        transform: scale(1.2);
+    }
+
     .menu-icon-line {
         width: 25px;
         height: 3px;
@@ -188,6 +211,18 @@
         height: 2.5px;
         margin-bottom: 3px;
         background-color: white;
+    }
+
+    .menu-item{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0;
+        padding-left: 20px;
+    }
+
+    .menu-item:hover{
+        transform: scale(1.2);
     }
 
     .navbar {

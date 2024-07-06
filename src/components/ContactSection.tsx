@@ -1,38 +1,112 @@
+import React, { useState } from "react";
 import "./ContactSection.css";
 
-function ContactSection() {
+const ContactSection = React.forwardRef<HTMLElement>((props, ref) => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      console.log("Form Data:", formData); // Verifique se formData está sendo preenchido corretamente
+
+      const response = await fetch("http://192.168.1.71:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log("Response status:", response.status); // Verifique o status da resposta
+
+      if (response.ok) {
+        alert("Mensagem enviada com sucesso!");
+      } else {
+        alert("Erro ao enviar mensagem. Por favor, tente novamente.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      alert("Erro ao enviar mensagem. Por favor, tente novamente.");
+    }
+  };
+
+  const handleRedirect = (url: string) => {
+    window.location.href = url;
+  };
+
   return (
     <>
-      <section className="contact-section">
+      <section ref={ref} className="contact-section">
         <div className="container flex-row row-center-verticaly">
-          <div className="column form-container">
+          <form onSubmit={handleSubmit} className="column form-container">
             <h1>Nos contate</h1>
             <p>Quer fazer uma encomenda ou matar duvidas? Entre em contato!</p>
-            <input type="text" name="name" id="" placeholder="Nome" />
-            <input type="email" name="email" id="" placeholder="Email" />
-            <input type="text" name="mensage" id="" placeholder="Mensagem" />
-            <button className="secondary-button">Enviar</button>
-          </div>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Nome"
+            />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+            />
+            <input
+              type="text"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Mensagem"
+            />
+            <button type="submit" className="secondary-button">
+              Enviar
+            </button>
+          </form>
           <div className="column info-div">
             <h1>informações</h1>
             <span>Número de Contato : +55 11 94666-7780</span>
-            <span>Email da Empresa : fabiana</span>
-            <span>
-              Endereço Físico
-              <br />
-              Rua São Caetano 1003, Jardim Valo Verde, Embu das Artes, SP
-            </span>
-            <div className="google-maps-info"></div>
+            <span>Email da Empresa : fabianafernando</span>
             <div className="social-media-info flex-row">
-              <img src="/images/instagra-logo.png" alt="" />
-              <img src="/images/youtube-logo.png" alt="" />
-              <img src="/images/whatsapp-logo.png" alt="" />
+              <img
+                onClick={() =>
+                  handleRedirect("https://www.instagram.com/binha4047/")
+                }
+                src="/images/instagra-logo.png"
+                alt=""
+              />
+              <img
+                onClick={() =>
+                  handleRedirect(
+                    "https://api.whatsapp.com/send?phone=5511946667780"
+                  )
+                }
+                src="/images/whatsapp-logo.png"
+                alt=""
+              />
             </div>
           </div>
         </div>
       </section>
     </>
   );
-}
+});
 
 export default ContactSection;

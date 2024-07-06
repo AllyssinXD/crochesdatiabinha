@@ -157,11 +157,11 @@
 
     .feedback-card {
         padding: 10px;
-        width: 180px;
+        width: 170px;
     }
 
     .feedback-card .comment {
-        font-size: 1.165rem; /* 14px */
+        font-size: 1rem; /* 14px */
         padding: 10px;
     }
 }

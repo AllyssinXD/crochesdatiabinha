@@ -47,7 +47,7 @@
 }
 
 .container{
-  width: calc(100vw - 40px);
+  width: calc(100% - 40px);
 
   max-width: 1200px;
   margin: 0 auto;
@@ -100,17 +100,31 @@
   transition: 0.2s;
 }
 
-.secondary-button:hover{
-transform: scale(1.1);
-}
-
-.primary-button:hover{
+button:hover{
+  cursor: pointer;
   transform: scale(1.1);
 }
 
-@media (max-width: 386px) {
+@media  (min-width: 481px) and (max-width: 767px)  {
   :root{
     --general-card-size: 450px;
+    --general-card-width: 300px;
+    --selection-button-space: 20px;
+  }
+}
+
+
+@media (min-width: 387px) and (max-width: 480px) {
+  :root{
+    --general-card-size: 500px;
+    --general-card-width: 347px;
+    --selection-button-space: 20px;
+  }
+}
+
+@media (max-width: 386px){
+  :root{
+    --general-card-size: 480px;
     --general-card-width: 300px;
     --selection-button-space: 20px;
   }

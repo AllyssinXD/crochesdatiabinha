@@ -1,6 +1,10 @@
 import "./Footer.css";
 
 function Footer() {
+  const handleRedirect = (url: string) => {
+    window.location.href = url;
+  };
+
   return (
     <>
       <footer>
@@ -8,9 +12,22 @@ function Footer() {
           <div className="contact-info">
             <h2>Redes Sociais</h2>
             <div className="social-media-info">
-              <img src="/images/instagra-logo.png" alt="" />
-              <img src="/images/youtube-logo.png" alt="" />
-              <img src="/images/whatsapp-logo.png" alt="" />
+              <img
+                onClick={() =>
+                  handleRedirect("https://instragram.com/binha4047/")
+                }
+                src="/images/instagra-logo.png"
+                alt=""
+              />
+              <img
+                onClick={() =>
+                  handleRedirect(
+                    "https://api.whatsapp.com/send?phone=5511946667780"
+                  )
+                }
+                src="/images/whatsapp-logo.png"
+                alt=""
+              />
             </div>
 
             <h2>Entre em Contato</h2>

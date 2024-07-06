@@ -1,6 +1,21 @@
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 import "./JobsSection.css";
-function JobsSection() {
+
+interface JobsSectionProps {
+  contactSectionRef: RefObject<HTMLElement>;
+}
+
+const JobsSection: React.FC<JobsSectionProps> = ({ contactSectionRef }) => {
+  const scrollToContact = () => {
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const redirectToInstagram = () => {
+    window.location.href = "https://www.instagram.com/binha4047/";
+  };
+
   const [isMobile, setIsMobile] = useState(false);
 
   const updateMobile = () => {
@@ -41,8 +56,12 @@ function JobsSection() {
           </div>
         </div>
         <div className="button-row">
-          <button className="primary-button">Veja Mais Produtos</button>
-          <button className="secondary-button">Faça uma Encomenda</button>
+          <button onClick={redirectToInstagram} className="primary-button">
+            Veja Mais Produtos
+          </button>
+          <button onClick={scrollToContact} className="secondary-button">
+            Faça uma Encomenda
+          </button>
         </div>
       </div>
     );
@@ -105,5 +124,5 @@ function JobsSection() {
       </section>
     </>
   );
-}
+};
 export default JobsSection;
