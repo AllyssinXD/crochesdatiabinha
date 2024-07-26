@@ -106,8 +106,15 @@ function DynamousSection() {
             alcançar novos patamares juntos?
           </p>
           <div className="button-row flex-row space-between">
-            <button className="dynamous-button">Saiba Mais</button>
-            <button className="dynamous-button">Nos Contate</button>
+            <button
+              onClick={() => {
+                window.location.href =
+                  "https://www.instagram.com/dynamoussoftware/";
+              }}
+              className="dynamous-button"
+            >
+              Saiba Mais
+            </button>
           </div>
         </div>
       </div>

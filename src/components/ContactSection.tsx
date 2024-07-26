@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ContactSection.css";
 
-const ContactSection = React.forwardRef<HTMLElement>((props, ref) => {
+const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
