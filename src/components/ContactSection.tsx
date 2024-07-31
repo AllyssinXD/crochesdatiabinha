@@ -24,7 +24,7 @@ const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
       console.log("Form Data:", formData); // Verifique se formData está sendo preenchido corretamente
 
       const response = await fetch(
-        "http://crochesdatiabinha-backend-production.up.railway.app/api/contact",
+        "https://crochesdatiabinha-backend-production.up.railway.app/api/contact",
         {
           method: "POST",
           headers: {
