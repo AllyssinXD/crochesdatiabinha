@@ -23,16 +23,13 @@ const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
     try {
       console.log("Form Data:", formData); // Verifique se formData está sendo preenchido corretamente
 
-      const response = await fetch(
-        "http://crochesdatiabinha-backend-production.up.railway.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch("crochesdatiabinha-backend.vercel.app/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       console.log("Response status:", response.status); // Verifique o status da resposta
 
