@@ -48,7 +48,7 @@ function BlogSection() {
   const navigate = useNavigate();
 
   const redirectToBlog = () => {
-    navigate("/blog");
+    navigate("/login");
   };
 
   useEffect(() => {
