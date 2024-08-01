@@ -18,7 +18,7 @@ function CreateUser() {
           password: password,
           email: email,
         })
-        .then((res) => {
+        .then((_) => {
           if (isSubscribed) {
             navigate("/login");
           }
