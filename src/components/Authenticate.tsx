@@ -9,7 +9,7 @@ function Authenticate() {
   const password = searchParams.get("password");
   axios
     .post(import.meta.env.VITE_API_URL + "/api/auth/login", {
-      username,
+      username: username,
       password: password,
     })
     .then((response) => {
