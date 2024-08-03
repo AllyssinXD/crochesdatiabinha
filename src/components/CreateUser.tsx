@@ -13,11 +13,14 @@ function CreateUser() {
     let isSubscribed = true;
     if (username && email && password) {
       axios
-        .post(import.meta.env.VITE_API_URL + "/api/auth/register", {
-          username: username,
-          password: password,
-          email: email,
-        })
+        .post(
+          "https://crochesdatiabinha-backend-production.up.railway.app/api/auth/register",
+          {
+            username: username,
+            password: password,
+            email: email,
+          }
+        )
         .then((_) => {
           if (isSubscribed) {
             navigate("/login");
