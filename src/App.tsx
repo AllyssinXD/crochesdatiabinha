@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import Authenticate from "./components/Authenticate";
 import Signup from "./components/Signup";
 import CreateUser from "./components/CreateUser";
+import Dashboard from "./components/Dashboard";
 
 const routes = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const routes = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
   },
 ]);
 

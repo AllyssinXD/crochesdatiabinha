@@ -1,0 +1,9 @@
+.dashboard{
+    display: flex;
+}
+
+.dashboard .main{
+    padding: 20px;
+    width: calc(100% - 200px);
+    background-color: rgb(247, 247, 247);
+}

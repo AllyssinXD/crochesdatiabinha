@@ -1,0 +1,40 @@
+.side-menu{
+    height: 100vh;
+    width: 200px;
+    background-color: white;
+    padding-top: 100px;
+}
+
+.side-menu-item{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 120px;
+    height: 30px;
+    background-color: white;
+}
+
+.side-menu-item:hover{
+    background-color: #FFF2FE;
+    cursor: pointer;
+}
+
+.side-menu-item:hover span{
+    color:  var(--dark-pink);
+}
+
+.side-menu-item img{
+    width: 30px;
+    height: 100%;
+}
+
+.side-menu-item span{
+    margin-left: 10px;
+    color: rgb(61, 61, 61);
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
