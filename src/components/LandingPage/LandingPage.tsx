@@ -1,12 +1,12 @@
 import { useRef } from "react";
-import BlogSection from "./BlogSection";
-import ContactSection from "./ContactSection";
-import Footer from "./Footer";
-import HeroSection from "./HeroSection";
-import JobsSection from "./JobsSection";
+import BlogSection from "./blogSection/BlogSection";
+import ContactSection from "./contactSection/ContactSection";
+import Footer from "./footer/Footer";
+import HeroSection from "./heroSection/HeroSection";
+import JobsSection from "./jobsSection/JobsSection";
 import "./LandingPage.css";
-import Navbar from "./Navbar";
-import DynamousSection from "./DynamousSection";
+import Navbar from "./navbar/Navbar";
+import DynamousSection from "./dynamousSection/DynamousSection";
 
 function LandingPage() {
   const contactSectionRef = useRef<HTMLElement>(null);
