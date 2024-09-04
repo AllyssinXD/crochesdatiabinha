@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./components/landingPage/LandingPage";
 import Maintenance from "./components/Maintenance";
-import Login from "./components/signPages/Login";
-import Signup from "./components/signPages/Signup";
-import CreateUser from "./components/signPages/CreateUser";
+import Login from "./components/signPages/pages/Login";
+import Signup from "./components/signPages/pages/Signup";
+import CreateUser from "./components/signPages/processes/CreateUser";
 import Dashboard from "./components/dashboardPage/Dashboard";
 
 const routes = createBrowserRouter([

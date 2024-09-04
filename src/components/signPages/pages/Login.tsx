@@ -1,12 +1,17 @@
 import { useState } from "react";
-import "./AuthPage.css";
-import Input from "./Input";
+import "./AuthenticationPages.cs";
+import Input from "../Input";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Error from "../ErrorPopup";
+import Sucess from "../SucessPopup";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const [error, setError] = useState("");
+  const [sucess, setSucess] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,14 +27,16 @@ export default function Login() {
       .then((response) => {
         if (response.data.token) {
           //salva token
-          navigate("/");
+          setSucess("Logado com sucesso!");
+          setTimeout(() => navigate("/"), 3000);
         }
       })
       .catch((err) => {
-        navigate("/login?err=" + err);
         console.log(err);
+        setError("Erro ao fazer Login : " + err.response.data.message);
       });
   };
+
   return (
     <>
       <section className="auth-container flex-row">
@@ -77,6 +84,20 @@ export default function Login() {
           </div>
         </div>
       </section>
+      {error && (
+        <Error
+          error={error}
+          vanish_time={10000}
+          onVanish={() => setError("")}
+        />
+      )}
+      {sucess && (
+        <Sucess
+          sucess={sucess}
+          vanish_time={10000}
+          onVanish={() => setError("")}
+        />
+      )}
     </>
   );
 }
