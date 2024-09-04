@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./AuthenticationPages.cs";
+import "./AuthenticationPages.css";
 import Input from "../Input";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
