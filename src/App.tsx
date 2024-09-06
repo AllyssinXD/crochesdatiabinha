@@ -1,11 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
+import LandingPage from "./components/landingPage/LandingPage";
 import Maintenance from "./components/Maintenance";
-import Login from "./components/SignPages/Login";
-import Authenticate from "./components/SignPages/Authenticate";
-import Signup from "./components/SignPages/Signup";
-import CreateUser from "./components/SignPages/CreateUser";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Login from "./components/signPages/pages/Login";
+import Signup from "./components/signPages/pages/Signup";
+import CreateUser from "./components/signPages/processes/CreateUser";
+import Dashboard from "./components/dashboardPage/Dashboard";
 
 const routes = createBrowserRouter([
   {
@@ -19,10 +18,6 @@ const routes = createBrowserRouter([
   {
     path: "/loja",
     element: <Maintenance />,
-  },
-  {
-    path: "/authenticate",
-    element: <Authenticate />,
   },
   {
     path: "/create-user",

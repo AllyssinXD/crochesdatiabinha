@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function Signup() {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="auth-container flex-row">
@@ -33,30 +37,20 @@ function Signup() {
                 id="password"
                 className="text-input"
               />
-              <div className="row space-between">
-                <div className="row">
-                  <label className="checkbox">
-                    <input
-                      type="checkbox"
-                      name="stay-logged"
-                      id="stay-logged"
-                      className="checkbox-input"
-                    />
-                    <span className="checkmark"></span>
-                  </label>
-                  <span className="input-label stay-logged">
-                    Lembrar de mim
-                  </span>
-                </div>
-                <span className="link">Esqueci minha senha</span>
+              <div className="sign-up-row row space-between">
+                <span className="sign-up">Já tem uma conta? </span>
+                <span
+                  className="link"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
+                  Faça Login
+                </span>
               </div>
               <button className="auth-button" type="submit">
                 Entrar
               </button>
-              <div className="sign-up-row row space-between">
-                <span className="sign-up">Já tem uma conta? </span>
-                <span className="link">Faça Login</span>
-              </div>
             </form>
           </div>
         </div>
