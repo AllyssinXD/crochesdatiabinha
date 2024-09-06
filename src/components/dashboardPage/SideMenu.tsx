@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import "./SideMenu.css";
-import { NavigateFunction, useNavigate } from "react-router-dom";
 
 // Formato para Props:
 type SideMenuProps = {
