@@ -4,7 +4,7 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 
 // Formato para Props:
 type SideMenuProps = {
-  items: { imgUrl: string; label: string; link: string }[];
+  items: { imgUrl: string; label: string; onClick(): void }[];
 };
 
 function SideMenu(props: SideMenuProps) {
@@ -13,22 +13,12 @@ function SideMenu(props: SideMenuProps) {
   //Converter props para um Elemento, Item do Menu
   props.items.forEach((v) => {
     propsToMenuItem.push(
-      <div
-        className="side-menu-item"
-        onClick={generateRedirect(v.link, useNavigate())}
-      >
+      <div className="side-menu-item" onClick={v.onClick}>
         <img className="menu-item-icon" src={v.imgUrl} />
         <span className="menu-item-title">{v.label}</span>
       </div>
     );
   });
-
-  //Função que Gera Funções para Redirecionamento de Página
-  function generateRedirect(link: string, navigator: NavigateFunction) {
-    return function () {
-      navigator(link);
-    };
-  }
 
   //Retorna o Menu Vertical Junto com Seus Itens, Gerados Dinamicamente pelos props
   return (
