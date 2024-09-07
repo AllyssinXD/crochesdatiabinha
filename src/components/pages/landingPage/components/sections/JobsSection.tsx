@@ -1,9 +1,9 @@
 import { RefObject, useEffect, useState } from "react";
-import "./JobsSection.css";
+import "../../styles/JobsSection.css";
 
-interface JobsSectionProps {
+type JobsSectionProps = {
   contactSectionRef: RefObject<HTMLElement>;
-}
+};
 
 const JobsSection: React.FC<JobsSectionProps> = ({ contactSectionRef }) => {
   const scrollToContact = () => {

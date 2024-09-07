@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ContactSection.css";
+import "../../styles/ContactSection.css";
 
 const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
   const [formData, setFormData] = useState({

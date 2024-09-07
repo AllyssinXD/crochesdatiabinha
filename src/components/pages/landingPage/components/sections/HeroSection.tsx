@@ -1,9 +1,9 @@
 import React, { RefObject } from "react";
-import "./HeroSection.css";
+import "../../styles/HeroSection.css";
 
-interface HeroSectionProps {
+type HeroSectionProps = {
   contactSectionRef: RefObject<HTMLElement>;
-}
+};
 
 const HeroSection: React.FC<HeroSectionProps> = ({ contactSectionRef }) => {
   const scrollToContact = () => {
