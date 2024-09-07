@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Dashboard.css";
+import "../styles/Dashboard.css";
 import SideMenu from "./SideMenu";
 import Home from "./painels/HomePainel";
 import Contacts from "./painels/ContactsPainel";

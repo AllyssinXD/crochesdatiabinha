@@ -4,7 +4,7 @@ import ContactSection from "./sections/ContactSection";
 import Footer from "../../../common/footer/Footer";
 import HeroSection from "./sections/HeroSection";
 import JobsSection from "./sections/JobsSection";
-import "./LandingPage.css";
+import "../styles/LandingPage.css";
 import Navbar from "../../../common/navbar/Navbar";
 import DynamousSection from "./sections/DynamousSection";
 

@@ -1,6 +1,6 @@
 import SideMenuProps from "../../../interfaces/SideMenuInterface";
 
-import "./SideMenu.css";
+import "../styles/SideMenu.css";
 
 function SideMenu({ menuOptions }: SideMenuProps) {
   //Retorna o Menu Vertical Junto com Seus Itens, Gerados Dinamicamente pelos props

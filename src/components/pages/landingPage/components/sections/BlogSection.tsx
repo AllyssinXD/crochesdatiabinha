@@ -1,5 +1,5 @@
 import { MouseEvent, useEffect, useRef, useState } from "react";
-import "./BlogSection.css";
+import "../../styles/BlogSection.css";
 import { useNavigate } from "react-router-dom";
 
 function BlogSection() {

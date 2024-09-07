@@ -1,5 +1,5 @@
 import { CSSProperties, useRef } from "react";
-import "./DynamousSection.css";
+import "../../styles/DynamousSection.css";
 
 const generateStyles = (
   progress: string,

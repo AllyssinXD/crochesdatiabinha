@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./Popups.css";
+import "./style/Popups.css";
 
 interface ErrorProps {
   error: string;

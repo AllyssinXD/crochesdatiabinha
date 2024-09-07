@@ -1,5 +1,5 @@
 import React, { RefObject } from "react";
-import "./HeroSection.css";
+import "../../styles/HeroSection.css";
 
 type HeroSectionProps = {
   contactSectionRef: RefObject<HTMLElement>;

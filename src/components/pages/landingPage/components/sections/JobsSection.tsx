@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState } from "react";
-import "./JobsSection.css";
+import "../../styles/JobsSection.css";
 
 type JobsSectionProps = {
   contactSectionRef: RefObject<HTMLElement>;
