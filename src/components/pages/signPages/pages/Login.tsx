@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./AuthenticationPages.css";
-import Input from "../Input";
+import Input from "../../../common/input/Input";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Error from "../ErrorPopup";
-import Sucess from "../SucessPopup";
+import Error from "../../../common/popups/ErrorPopup";
+import Sucess from "../../../common/popups/SucessPopup";
 
 export default function Login() {
   const [username, setUsername] = useState("");
