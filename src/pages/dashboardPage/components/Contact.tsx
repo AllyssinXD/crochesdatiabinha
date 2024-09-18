@@ -1,6 +1,10 @@
 import ContactInterface from "../../../interfaces/ContactInterface";
 
-export default function Contact({ name, email, message }: ContactInterface) {
+export default function ContactCard({
+  name,
+  email,
+  message,
+}: ContactInterface) {
   return (
     <div className="contact-wrapper">
       <div className="main-wrapper">
