@@ -1,7 +1,9 @@
-import Error from "../../../../common/popups/ErrorPopup";
-import ContactCard from "../Contact";
 import useGetWithToken from "../../../../hooks/useWithTokenReq";
 import ContactInterface from "../../../../interfaces/ContactInterface";
+
+import ContactCard from "../Contact";
+import Error from "../../../../common/popups/ErrorPopup";
+import { useState } from "react";
 
 interface ContactsInterface {
   list: ContactInterface[];
@@ -12,33 +14,75 @@ export default function Contacts() {
     data: contactList,
     error,
     isFetching,
-  } = useGetWithToken<ContactsInterface>("/api/list");
+  } = useGetWithToken<ContactsInterface>("/api/contact/list");
 
-  console.log(contactList);
+  const [x, setX] = useState(1);
+
+  let listLenght = 0;
+  if (contactList?.list)
+    listLenght =
+      contactList?.list.length % 3 != 0
+        ? Math.floor(contactList?.list.length / 3) + 1
+        : contactList?.list.length / 3;
+
+  const listLeft = () => {
+    if (x != 1) setX(x - 1);
+  };
+
+  const listRight = () => {
+    if (x < listLenght) setX(x + 1);
+  };
 
   return (
-    <div>
+    <>
       <div className="contacts-management">
         <div className="filter-row"></div>
         <div className="selected-contacts-row"></div>
-        <div className="contacts-list">
+        <div
+          className={
+            isFetching ? "center-everything contacts-list" : "contacts-list"
+          }
+        >
           <p>{isFetching && "Carregando"}</p>
-          {!isFetching && contactList?.list ? (
-            contactList?.list.map((v, key) => {
-              const { name, email, message } = v;
+          {listLenght > 0
+            ? contactList?.list.map((v, key) => {
+                const { name, email, message } = v;
 
-              return (
-                <ContactCard
-                  key={key}
-                  name={name}
-                  email={email}
-                  message={message}
-                />
-              );
-            })
-          ) : (
-            <p>Nenhum Contato Encontrado</p>
-          )}
+                if (key < x * 3 && key >= 3 * (x - 1)) {
+                  return (
+                    <ContactCard
+                      key={key}
+                      name={name}
+                      email={email}
+                      message={message}
+                    />
+                  );
+                }
+              })
+            : !isFetching && <p>Nenhum Contato Encontrado</p>}
+        </div>
+        <div className="contact-list-options-div">
+          <button
+            className="dashboard-primary-button contacts-list-button"
+            onClick={() => {
+              listLeft();
+            }}
+          >
+            <img src="images/left-icon.png" />
+          </button>
+
+          <span className="list-counter">
+            {!isFetching && x + " de " + listLenght}
+          </span>
+
+          <button
+            className="dashboard-primary-button contacts-list-button"
+            onClick={() => {
+              listRight();
+            }}
+          >
+            <img src="images/right-icon.png" />
+          </button>
         </div>
       </div>
       {/* Mostrar erro em caso de falha na requisição */}
@@ -51,6 +95,6 @@ export default function Contacts() {
           }}
         />
       ) : null}
-    </div>
+    </>
   );
 }

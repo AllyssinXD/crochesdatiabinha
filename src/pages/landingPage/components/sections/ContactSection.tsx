@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/ContactSection.css";
+import axios from "axios";
 
 const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
   const [formData, setFormData] = useState({
@@ -23,27 +24,21 @@ const ContactSection = React.forwardRef<HTMLElement, {}>((_, ref) => {
     try {
       console.log("Form Data:", formData); // Verifique se formData está sendo preenchido corretamente
 
-      const response = await fetch(
-        "https://crochesdatiabinha-backend-production.up.railway.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
+      const response = await axios.post(
+        import.meta.env.VITE_REACT_APP_BACKEND_URL + "/api/contact",
+        JSON.stringify(formData),
+        { headers: { "Content-Type": "application/json" } }
       );
 
       console.log("Response status:", response.status); // Verifique o status da resposta
 
-      if (response.ok) {
+      if (response.status < 300 && response.status > 199) {
         alert("Mensagem enviada com sucesso!");
       } else {
         alert("Erro ao enviar mensagem. Por favor, tente novamente.");
       }
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
-      alert("Erro ao enviar mensagem. Por favor, tente novamente.");
     }
   };
 

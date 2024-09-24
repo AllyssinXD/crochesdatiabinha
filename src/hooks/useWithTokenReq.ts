@@ -24,6 +24,7 @@ export default function useGetWithToken<U>(endpoint: string) : IReq<U>{
       })
       .catch((err)=>{
         setError(err.response.data.message);
+        console.log(JSON.stringify(err.response))
       })
       .finally(()=>setIsFetching(false));
   },[]);

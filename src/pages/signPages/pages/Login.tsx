@@ -23,6 +23,7 @@ export default function Login() {
       })
       .then((response) => {
         if (response.data.token) {
+          console.log(response.data.token);
           localStorage.setItem("token", response.data.token);
           setSucess("Logado com sucesso!");
           setTimeout(() => navigate("/"), 3000);

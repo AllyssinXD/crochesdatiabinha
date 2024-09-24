@@ -12,7 +12,7 @@
     display: flex;
     width: 100%;
     background-color: white;
-    height: 50px;
+    height: 45px;
     border-radius: 16px;
 }
 
@@ -47,8 +47,17 @@
 .contact-wrapper{
     display: flex;
     align-items: center;
-    height: 200px;
+    height: 160px;
     justify-content: end;
+}
+
+.contacts-list{
+    height: 480px;
+}
+
+.contact-list-options-div{
+    display: flex;
+    justify-content: center;
 }
 
 .contact-wrapper .main-wrapper{
@@ -63,7 +72,7 @@
 .contacts-management{
     margin-top: 50px;
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     border-radius: 16px;
     background-color: #ffffff;
 }
@@ -97,4 +106,30 @@
     color: #B72E6F;
     background-color: white;
     transform: scale(1.01);
+}
+
+.contacts-list-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.contacts-list-button img{
+    display: block;
+    width: 40px;
+}
+
+.list-counter{
+    height: 40px;
+    display: flex;
+    align-items: end;
+    margin: 0 10px;
+    font-size: 18px;
+    color: #B72E6F;
+}
+
+.center-everything{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
