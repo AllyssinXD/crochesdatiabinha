@@ -17,16 +17,14 @@ export default function Login() {
 
   const auth = () => {
     axios
-      .post(
-        "https://crochesdatiabinha-backend-production.up.railway.app/api/auth/login",
-        {
-          username: username,
-          password: password,
-        }
-      )
+      .post(import.meta.env.VITE_REACT_APP_BACKEND_URL + "/api/auth/login", {
+        username: username,
+        password: password,
+      })
       .then((response) => {
         if (response.data.token) {
-          //salva token
+          console.log(response.data.token);
+          localStorage.setItem("token", response.data.token);
           setSucess("Logado com sucesso!");
           setTimeout(() => navigate("/"), 3000);
         }

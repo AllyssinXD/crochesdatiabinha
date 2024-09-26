@@ -14,7 +14,7 @@ function CreateUser() {
     if (username && email && password) {
       axios
         .post(
-          "https://crochesdatiabinha-backend-production.up.railway.app/api/auth/register",
+          import.meta.env.VITE_REACT_APP_BACKEND_URL + "/api/auth/register",
           {
             username: username,
             password: password,
