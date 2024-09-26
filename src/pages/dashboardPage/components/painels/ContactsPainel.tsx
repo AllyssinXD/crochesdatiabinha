@@ -10,11 +10,13 @@ interface ContactsInterface {
 }
 
 export default function Contacts() {
+  const [seed, setSeed] = useState(1);
+
   const {
     data: contactList,
     error,
     isFetching,
-  } = useGetWithToken<ContactsInterface>("/api/contact/list");
+  } = useGetWithToken<ContactsInterface>("/api/contact/", seed);
 
   const [x, setX] = useState(1);
 
@@ -40,28 +42,38 @@ export default function Contacts() {
         <div className="selected-contacts-row"></div>
         <div
           className={
-            isFetching ? "center-everything contacts-list" : "contacts-list"
+            !isFetching && listLenght > 0
+              ? "contacts-list"
+              : "contacts-list center-everything"
           }
         >
           <p>{isFetching && "Carregando"}</p>
           {listLenght > 0
             ? contactList?.list.map((v, key) => {
-                const { name, email, message } = v;
+                const { _id, name, email, message, createdAt } = v;
 
                 if (key < x * 3 && key >= 3 * (x - 1)) {
                   return (
                     <ContactCard
+                      _id={_id}
                       key={key}
                       name={name}
                       email={email}
                       message={message}
+                      createdAt={createdAt}
+                      reloadComponent={() => {
+                        setSeed(Math.floor(Math.random() * 1000));
+                      }}
                     />
                   );
                 }
               })
             : !isFetching && <p>Nenhum Contato Encontrado</p>}
         </div>
-        <div className="contact-list-options-div">
+        <div
+          style={{ display: listLenght > 0 ? "flex" : "none" }}
+          className="contact-list-options-div"
+        >
           <button
             className="dashboard-primary-button contacts-list-button"
             onClick={() => {

@@ -7,7 +7,7 @@ interface IReq<T>{
   isFetching: boolean;
 }
 
-export default function useGetWithToken<U>(endpoint: string) : IReq<U>{
+export default function useGetWithToken<U>(endpoint: string, refreshTrigger?: number) : IReq<U>{
 
   const [data, setData] = useState<U | null>(null); 
   const [error, setError] = useState("");
@@ -27,7 +27,7 @@ export default function useGetWithToken<U>(endpoint: string) : IReq<U>{
         console.log(JSON.stringify(err.response))
       })
       .finally(()=>setIsFetching(false));
-  },[]);
+  },[refreshTrigger]);
 
   return {data, error, isFetching};
 }

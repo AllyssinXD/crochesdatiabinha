@@ -11,16 +11,16 @@ function Dashboard() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  const notPermited = () => {
-    console.log(error);
+  const notAllowed = () => {
     navigate("/login");
   };
 
   const { isFetching, error } = useVerifyPemissions(
     token,
     "acess-dashboard",
-    notPermited
+    notAllowed
   );
+
   const [currentPainel, setCurrentPainel] = useState("home");
 
   const renderPainel = () => {
@@ -34,22 +34,34 @@ function Dashboard() {
         <SideMenu
           menuOptions={[
             {
-              iconUrl: "./",
+              iconUrl: "/images/home-icon.png",
               name: "Inicio",
               onClick: () => {
                 setCurrentPainel("home");
               },
             },
-            { iconUrl: "./", name: "Usuários", onClick: () => {} },
-            { iconUrl: "./", name: "Blog", onClick: () => {} },
             {
-              iconUrl: "./",
+              iconUrl: "/images/users-icon.png",
+              name: "Usuários",
+              onClick: () => {},
+            },
+            {
+              iconUrl: "/images/blog-icon.png",
+              name: "Blog",
+              onClick: () => {},
+            },
+            {
+              iconUrl: "/images/messages-icon.png",
               name: "Contatos",
               onClick: () => {
                 setCurrentPainel("contacts");
               },
             },
-            { iconUrl: "./", name: "Admins", onClick: () => {} },
+            {
+              iconUrl: "/images/admins-icon.png",
+              name: "Admins",
+              onClick: () => {},
+            },
           ]}
         />
 

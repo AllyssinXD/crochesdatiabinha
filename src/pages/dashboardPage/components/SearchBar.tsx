@@ -1,4 +1,9 @@
+import useGetWithToken from "../../../hooks/useWithTokenReq";
+import UserInterface from "../../../interfaces/UserInterface";
+
 export default function SearchBar() {
+  const { data } = useGetWithToken<UserInterface>("/api/auth/");
+
   return (
     <div className="fixed-dashboard-header space-between">
       <div className="search-bar-wrapper">
@@ -10,7 +15,7 @@ export default function SearchBar() {
           placeholder="Procurar"
         />
       </div>
-      <div className="profile-dropdown"></div>
+      <div className="profile-dropdown">{data?.user.username}</div>
     </div>
   );
 }

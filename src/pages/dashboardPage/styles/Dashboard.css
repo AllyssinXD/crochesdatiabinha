@@ -1,5 +1,8 @@
 .dashboard{
     display: flex;
+    text-transform: uppercase;
+    font-family: 'InriaSans';
+    letter-spacing: 2px;
 }
 
 .dashboard .painel-container{
@@ -19,7 +22,11 @@
 .profile-dropdown{
     background-color: #FFF2FE;
     height: 100%;
-    width: 200px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
     border-radius: 16px;
 }
 
@@ -33,10 +40,10 @@
 }
 
 .search-text-input{
-    width: 100%;
+    width: 100%; 
+    border: none;
     font-family: 'InriaSans';
     letter-spacing: 2px;
-    border: none;
     text-transform: uppercase;
 }
 
@@ -47,8 +54,10 @@
 .contact-wrapper{
     display: flex;
     align-items: center;
-    height: 160px;
+    height: 120px;
     justify-content: end;
+    padding: 0 50px;
+    border-bottom: 1px solid #FFF2FE;
 }
 
 .contacts-list{
@@ -58,11 +67,12 @@
 .contact-list-options-div{
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .contact-wrapper .main-wrapper{
     padding: 0 10px;
-    width: 40%;
+    width: 53.33%;
 }
 
 .sender-info{
@@ -77,15 +87,15 @@
     background-color: #ffffff;
 }
 
-.main-wrapper{
-    width: 50%;
-}
-
 .actions-wrapper{
     display: flex;
-    width: 50%;
+    width: 23.33%;
     justify-content: space-between;
     padding:0 20px;
+}
+
+.details-wrapper{
+    width: 23.33%;
 }
 
 .dashboard-primary-button{
@@ -114,7 +124,7 @@
     border-radius: 5px;
 }
 
-.contacts-list-button img{
+.dashboard-primary-button img{
     display: block;
     width: 40px;
 }
