@@ -33,6 +33,8 @@ export default function Login() {
         console.log(err);
         setError("Erro ao fazer Login : " + err.response.data.message);
       });
+
+    console.log(import.meta.env.VITE_REACT_APP_BACKEND_URL);
   };
 
   return (
