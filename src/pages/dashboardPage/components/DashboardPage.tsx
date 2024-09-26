@@ -15,7 +15,7 @@ function Dashboard() {
     navigate("/login");
   };
 
-  const { isFetching, error } = useVerifyPemissions(
+  const { isFetching } = useVerifyPemissions(
     token,
     "acess-dashboard",
     notAllowed
