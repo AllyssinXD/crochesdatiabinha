@@ -4,5 +4,6 @@ export default interface UserInterface{
         password: string;
         username: string;
         email: string;
+        profilePicUrl?: string;
     }   
 }
