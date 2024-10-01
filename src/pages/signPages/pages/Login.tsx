@@ -17,14 +17,18 @@ export default function Login() {
 
   const auth = () => {
     axios
-      .post(import.meta.env.VITE_REACT_APP_BACKEND_URL + "/api/auth/login", {
-        username: username,
-        password: password,
-      })
+      .post(
+        import.meta.env.VITE_REACT_APP_BACKEND_URL + "/api/auth/login",
+        {
+          username: username,
+          password: password,
+        },
+        {
+          withCredentials: true,
+        }
+      )
       .then((response) => {
-        if (response.data.token) {
-          console.log(response.data.token);
-          localStorage.setItem("token", response.data.token);
+        if (response.status == 200) {
           setSucess("Logado com sucesso!");
           setTimeout(() => navigate("/"), 3000);
         }
@@ -79,7 +83,14 @@ export default function Login() {
             </button>
             <div className="sign-up-row row space-between">
               <span className="sign-up">Ainda não tem uma conta? </span>
-              <span className="link">Registre-se</span>
+              <span
+                className="link"
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                Registre-se
+              </span>
             </div>
           </div>
         </div>

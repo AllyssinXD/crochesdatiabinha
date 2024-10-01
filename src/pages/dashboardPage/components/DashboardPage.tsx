@@ -2,30 +2,27 @@ import { useState } from "react";
 import "../styles/Dashboard.css";
 import SideMenu from "./SideMenu";
 import Home from "./painels/HomePainel";
-import Contacts from "./painels/ContactsPainel";
 import SearchBar from "./SearchBar";
 import { useNavigate } from "react-router-dom";
 import useVerifyPemissions from "../../../hooks/useVerifyPermissions";
+import MyAccountPainel from "./painels/MyAccountPainel";
+import ContactsPainel from "./painels/ContactsPainel";
 
 function Dashboard() {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   const notAllowed = () => {
     navigate("/login");
   };
 
-  const { isFetching } = useVerifyPemissions(
-    token,
-    "acess-dashboard",
-    notAllowed
-  );
+  const { isFetching } = useVerifyPemissions("acess-dashboard", notAllowed);
 
   const [currentPainel, setCurrentPainel] = useState("home");
 
   const renderPainel = () => {
     if (currentPainel == "home") return <Home />;
-    if (currentPainel == "contacts") return <Contacts />;
+    if (currentPainel == "contacts") return <ContactsPainel />;
+    if (currentPainel == "my-account") return <MyAccountPainel />;
   };
 
   const renderDashboard = () => {
@@ -61,6 +58,13 @@ function Dashboard() {
               iconUrl: "/images/admins-icon.png",
               name: "Admins",
               onClick: () => {},
+            },
+            {
+              iconUrl: "/",
+              name: "Minha Conta",
+              onClick: () => {
+                setCurrentPainel("my-account");
+              },
             },
           ]}
         />

@@ -1,6 +1,6 @@
 interface SideMenuProps {
   menuOptions: {
-    iconUrl: string;
+    iconUrl?: string;
     name: string;
     onClick(): void;
   }[];

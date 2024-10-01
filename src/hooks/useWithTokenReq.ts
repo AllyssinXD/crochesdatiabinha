@@ -16,8 +16,8 @@ export default function useGetWithToken<U>(endpoint: string, refreshTrigger?: nu
   useEffect(()=>{
     //Fazer requisição
     axios.get(import.meta.env.VITE_REACT_APP_BACKEND_URL + endpoint, 
-      {headers: 
-        {Authorization: 'Bearer ' + localStorage.getItem('token')}
+      {
+        withCredentials: true
       })
       .then((res)=>{
         setData(res.data);

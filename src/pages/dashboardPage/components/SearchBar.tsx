@@ -1,8 +1,13 @@
 import useGetWithToken from "../../../hooks/useWithTokenReq";
 import UserInterface from "../../../interfaces/UserInterface";
+import Dropdown from "./Dropdown";
 
 export default function SearchBar() {
   const { data } = useGetWithToken<UserInterface>("/api/auth/");
+
+  const profilePicUrl = data?.user.profilePicUrl
+    ? data?.user.profilePicUrl
+    : "/images/admins-icon.png";
 
   return (
     <div className="fixed-dashboard-header space-between">
@@ -15,7 +20,7 @@ export default function SearchBar() {
           placeholder="Procurar"
         />
       </div>
-      <div className="profile-dropdown">{data?.user.username}</div>
+      <Dropdown pfpUrl={profilePicUrl} />
     </div>
   );
 }
