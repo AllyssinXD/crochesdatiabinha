@@ -10,7 +10,7 @@ export default function useVerifyPemissions(permission: string, onError: Functio
     useEffect(()=>{
       axios.post(
         import.meta.env.VITE_REACT_APP_BACKEND_URL + '/api/auth/verify',
-        JSON.stringify({permission: permission}),
+        {permission: permission},
         {
           withCredentials: true
         }
