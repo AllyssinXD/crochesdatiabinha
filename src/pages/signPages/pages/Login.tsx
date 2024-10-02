@@ -34,8 +34,12 @@ export default function Login() {
         }
       })
       .catch((err) => {
-        console.log(err);
-        setError("Erro ao fazer Login : " + err.response.data.message);
+        let message = "";
+        switch (err.message) {
+          case "Network Error":
+            message = "Erro de Conexão do site";
+        }
+        setError(message);
       });
 
     console.log(import.meta.env.VITE_REACT_APP_BACKEND_URL);
